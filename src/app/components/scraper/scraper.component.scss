@@ -1,0 +1,51 @@
+
+h1{
+  color: red;
+  text-align: center;
+}
+.scraper_input{
+  position: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(12, 11, 11);
+  height: 200px;
+  width: 59%;
+  padding-left: 25%;
+  margin-left: 10%;
+
+}
+#key_word_one{
+  color: rgb(43, 255, 0);
+  font-size: xx-small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#key_word_two{
+  color: rgb(58, 58, 254);
+  font-size: xx-small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+#key_word_three{
+  color: rgb(243, 247, 2);
+  font-size: xx-small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#url{
+  color: rgb(163, 0, 41);
+  font-size: large;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.url_input{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 570px;
+  border-color: rgb(0, 0, 0);
+  background-color: black;
+  color: white;
+
+}
+
