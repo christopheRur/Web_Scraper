@@ -1,4 +1,4 @@
- export interface scraper{
+ export interface scraperWeb{
 
  title:string;
 url:string;
@@ -17,6 +17,6 @@ images:Set<string>;
 setOne:Set<string>;
 setTwo:Set<string>;
 setThree:Set<string>;
-numericalValues:Set<string>;
+numericalValues:Set<number>;
 bodyLength:number;
  }
