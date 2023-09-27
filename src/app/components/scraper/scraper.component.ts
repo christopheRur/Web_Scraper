@@ -14,26 +14,64 @@ export class ScraperComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  url:string="https://edition.cnn.com/";
-  keyWordOne:string="cnn";
-  keyWordTwo:string="cnn";
-  keyWordThree:string="container__headline container_lead-plus-headlines__headline";
+  site:string='https://www.morningstar.com/';
+  keyWordOne:string='section';
+  keyWordTwo:string='today';
+  keyWordThree:string='mdc-page-shell__content mds-page-shell__content';
+
+  respOne!: Set<string>;
+  respTwo!: Set<string>;
+  respThree!: Set<string>;
+  links!:Set<string>;
+  images!:Set<string>;
+  numericalValues!:Set<number>;
+
+
+  title:string='';
+  keysFound:number=0;
+  status:number=0;
+  time:string='';
+  key1Found: boolean = false;
+  key2Found:Boolean = false;
+  key3Found:Boolean= false;
+  bodyLength:number=0;
 
 
 
 public scrapesWebsite():void{
   let webSource:any={
-    url: this.url,
+    url: this.site,
     keyWordOne: this.keyWordOne,
     keyWordTwo: this.keyWordTwo,
     keyWordThree: this.keyWordThree,
 
   }
   this.webScraperServ.scrapeUrl(webSource).subscribe(
-    (reponse: scraperWeb)=>{
-      console.log("=========j=====>"+reponse.bodyLength)
+    (response: scraperWeb)=>{
+      this.setAllValues(response);
+
     }
   )
+}
+
+private setAllValues(response:scraperWeb):void{
+  this.respOne=response.setOne
+
+  this.respOne=response.setOne;
+  this.respTwo=response.setTwo;
+  this.respThree=response.setThree;
+  this.links=response.links;
+  this.images=response.images;
+  this.numericalValues=response.numericalValues;
+
+  this.title=response.title
+  this.keysFound=response.keysFound;
+  this.status=response.status;
+  this.time=response.time;
+  this.key1Found=response.key1Found;
+  this.key2Found=response.key2Found;
+  this.key3Found=response.key3Found;
+  this.bodyLength=response.bodyLength;
 }
 
 }

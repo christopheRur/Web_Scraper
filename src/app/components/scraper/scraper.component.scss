@@ -39,6 +39,32 @@ h1{
   font-weight: bold;
 }
 
+#key_one{
+  color: rgb(43, 255, 0);
+  font-size: small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+
+
+}
+#key_two{
+  color: rgb(58, 58, 254);
+  font-size: small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+#key_three{
+  color: rgb(243, 247, 2);
+  font-size: small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+
+}
+
 #url{
   color: rgb(163, 0, 41);
   font-size: large;
@@ -132,6 +158,10 @@ th,td{
 
 
 
+}
+.status{
+  color: red;
+  padding-right: 122%;
 }
 
 
