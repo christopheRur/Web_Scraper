@@ -1,96 +1,147 @@
-
 <div class="main_container">
-
-<h1>Web Scraper</h1>
-<div class="scraper_input">
-<form action="">
-  <td title="URL">
-    <label for="" style="padding: 1%" id="url">URL: </label>
-    <input type="" name="url" class="url_input" [(ngModel)]="site" />
-  </td>
-
-  <pre></pre>
-  <table class="key_table">
-
-
-    <tr>
-      <td title="KEY WORD ONE">
-        <label for="" style="padding: 1%" id="key_word_one">KEY WORD ONE</label>
-        <input type="" name="wordone" class="word_one" [(ngModel)]="keyWordOne" />
+  <h1>Web Scraper</h1>
+  <div class="scraper_input">
+    <form action="">
+      <td title="URL">
+        <label for="" style="padding: 1%" id="url">URL: </label>
+        <input type="" name="url" class="url_input" [(ngModel)]="site" />
       </td>
 
-    <td title="KEY WORD TWO">
-      <label for="" style="padding: 1%" id="key_word_two">KEY WORD TWO</label>
-      <input type="" name="wordtwo" class="word_two" [(ngModel)]="keyWordTwo"  />
-    </td>
+      <pre></pre>
+      <table class="key_table">
+        <tr>
+          <td title="KEY WORD ONE">
+            <label for="" style="padding: 1%" id="key_word_one"
+              >KEY WORD ONE</label
+            >
+            <input
+              type=""
+              name="wordone"
+              class="word_one"
+              [(ngModel)]="keyWordOne"
+            />
+          </td>
 
-    <td title="KEY WORD THREE">
-      <label for="" style="padding: 1%" id="key_word_three">KEY WORD THREE</label>
-      <input type="" name="wordthree" [(ngModel)]="keyWordThree" class="word_three" />
-    </td>
+          <td title="KEY WORD TWO">
+            <label for="" style="padding: 1%" id="key_word_two"
+              >KEY WORD TWO</label
+            >
+            <input
+              type=""
+              name="wordtwo"
+              class="word_two"
+              [(ngModel)]="keyWordTwo"
+            />
+          </td>
 
-    </tr>
+          <td title="KEY WORD THREE">
+            <label for="" style="padding: 1%" id="key_word_three"
+              >KEY WORD THREE</label
+            >
+            <input
+              type=""
+              name="wordthree"
+              [(ngModel)]="keyWordThree"
+              class="word_three"
+            />
+          </td>
+        </tr>
+      </table>
+      <pre></pre>
+      <button id="search" (click)="scrapesWebsite()">FETCH</button>
+    </form>
+  </div>
 
-  </table>
   <pre></pre>
-<button id="search" (click)="scrapesWebsite()">FETCH</button>
 
-</form>
+  <div class="terminal">
+    <tr class="status">
+      <td style="background-color: rgb(250, 243, 243); font-weight: bolder">
+        Title: {{ title }}
+      </td>
+      <td style="color: rgb(227, 35, 227); font-weight: bolder">
+        Fetched on: {{ time }}
+      </td>
+      <td
+        style="
+          background-color: rgba(229, 214, 214, 0);
+          color: rgb(17, 255, 235);
+          font-weight: bolder;
+        "
+      >
+        {{ bodyLength }} Characters
+      </td>
+      <td
+        style="
+          background-color: white;
+          color: rgb(6, 155, 21);
+          font-weight: bolder;
+        "
+      >
+        Status: {{ status }}
+      </td>
+      <td style="color: rgb(6, 155, 21); font-weight: bolder">
+        Key word one: {{ key1Found }}
+      </td>
+      <td style="color: rgb(84, 87, 179); font-weight: bolder">
+        Key word two: {{ key2Found }}
+      </td>
+      <td style="color: rgb(251, 235, 7); font-weight: bolder">
+        Key word three: {{ key3Found }}
+      </td>
+      <td style="font-weight: bolder">Keys: {{ keysFound }}</td>
+    </tr>
+    <table class="terminal-table">
+      <thead>
+        <td id="key_one">{{ keyWordOne }}</td>
+        <td id="key_two">{{ keyWordTwo }}</td>
+        <td id="key_three">{{ keyWordThree }}</td>
+      </thead>
+      <tbody>
+        <td>
+          <tr *ngFor="let setOnes of respOne">
+            <td>{{ setOnes }}</td>
+          </tr>
+        </td>
+
+        <td>
+          <tr *ngFor="let setTwos of respTwo">
+            <td>{{ setTwos }}</td>
+          </tr>
+        </td>
+
+        <td>
+          <tr *ngFor="let setThrees of respThree">
+            <td>{{ setThrees }}</td>
+          </tr>
+        </td>
+      </tbody>
+    </table>
+  </div>
 </div>
-<pre></pre>
-<div class="terminal">
-  <tr class="status">
-
-
-    <td style="background-color: rgb(250, 243, 243); font-weight: bolder;">Title: {{title}}</td>
-    <td  style="color: rgb(227, 35, 227); font-weight: bolder;">Fetched on: {{time}}</td>
-    <td  style="background-color:rgba(229, 214, 214, 0);color: rgb(17, 255, 235); font-weight: bolder;">{{bodyLength}} Characters</td>
-    <td style="background-color:white;color: rgb(6, 155, 21); font-weight: bolder;">Status: {{status}}</td>
-    <td style="color: rgb(6, 155, 21); font-weight: bolder;">Key word one: {{key1Found}}</td>
-    <td style="color: rgb(84, 87, 179); font-weight: bolder;">Key word two: {{key2Found}}</td>
-    <td style="color: rgb(251, 235, 7); font-weight: bolder;">Key word three: {{key3Found}}</td>
-    <td style=" font-weight: bolder;">Keys: {{keysFound}}</td>
-  </tr>
-<table class="terminal-table">
+<table>
   <thead>
-    <td id="key_one">{{keyWordOne}}</td>
-    <td id="key_two">{{keyWordTwo}}</td>
-    <td id="key_three">{{keyWordThree}}</td>
+    <td style="color: rgb(255, 255, 255)" id="">LINKS</td>
+    <td style="color: rgb(246, 43, 141)" id="">IMAGES</td>
+    <td style="color: rgb(1, 251, 134)" id="">Frenquent Occured Numbers</td>
   </thead>
   <tbody>
+    <td>
+      <tr style="color: rgb(249, 253, 249)" *ngFor="let allLinks of links">
+        <td>{{ allLinks }}</td>
+      </tr>
+    </td>
 
     <td>
-      <tr *ngFor="let setOnes of respOne ">
-      <td >{{setOnes}}</td>
-    </tr>
-  </td>
+      <tr style="color: rgb(13, 5, 230)" *ngFor="let allImages of images">
+        <td><img src="{{ images }}" /></td>
+      </tr>
+    </td>
 
-  <td>
-    <tr *ngFor="let setTwos of respTwo ">
-      <td >{{setTwos}}</td>
-    </tr>
-  </td>
-
-  <td>
-    <tr *ngFor="let setThrees of respThree ">
-      <td >{{setThrees}}</td>
-    </tr>
-  </td>
-
-
-
+    <td>
+      <tr style="color: rgb(12, 242, 0)" *ngFor="let nval of numericalValues">
+        <td>{{ nval }}</td>
+      </tr>
+    </td>
   </tbody>
-
-    <td id="">IMAGES</td>
-     <td id="">LINKS</td>
-     <td id="">Frenquent Occured Numbers</td>
-<pre></pre>
-     <td *ngFor="let allLinks of links ">{{allLinks}}</td>
-     <td *ngFor="let allImages of images ">{{allImages}}</td>
-     <td *ngFor="let nval of numericalValues ">{{nval}}</td>
-
-
-  </table>
-</div>
-
-</div>
+</table>

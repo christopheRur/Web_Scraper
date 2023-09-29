@@ -14,10 +14,10 @@ export class ScraperComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  site:string='https://www.morningstar.com/';
-  keyWordOne:string='section';
-  keyWordTwo:string='today';
-  keyWordThree:string='mdc-page-shell__content mds-page-shell__content';
+  site:string='https://edition.cnn.com';
+  keyWordOne:string='cnn';
+  keyWordTwo:string='container__headline container_lead-plus-headlines__headline';
+  keyWordThree:string='zone__inner has-pseudo-class-fix-layout--wide-center';
 
   respOne!: Set<string>;
   respTwo!: Set<string>;
@@ -72,6 +72,7 @@ private setAllValues(response:scraperWeb):void{
   this.key2Found=response.key2Found;
   this.key3Found=response.key3Found;
   this.bodyLength=response.bodyLength;
+console.info("------------------->>>>>>>>>>"+response.images)
 }
 
 }
