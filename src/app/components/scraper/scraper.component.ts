@@ -72,7 +72,6 @@ private setAllValues(response:scraperWeb):void{
   this.key2Found=response.key2Found;
   this.key3Found=response.key3Found;
   this.bodyLength=response.bodyLength;
-console.info("------------------->>>>>>>>>>"+response.images)
 }
 
 }
