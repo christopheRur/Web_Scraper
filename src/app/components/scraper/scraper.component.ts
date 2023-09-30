@@ -39,6 +39,15 @@ export class ScraperComponent implements OnInit {
 
 
 public scrapesWebsite():void{
+
+  if(this.site.length==0){alert("No URL was entered!");}
+
+  else if(!this.site.includes("https://")){alert("Website must start with https://");}
+  else if(this.keyWordOne.length==0 && this.keyWordTwo.length==0
+    && this.keyWordThree.length==0){alert("No Keyword was found!");}
+
+  else {
+
   let webSource:any={
     url: this.site,
     keyWordOne: this.keyWordOne,
@@ -52,6 +61,7 @@ public scrapesWebsite():void{
 
     }
   )
+}
 }
 
 private setAllValues(response:scraperWeb):void{
