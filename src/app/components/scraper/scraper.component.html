@@ -4,7 +4,7 @@
     <form action="">
       <td title="URL">
         <label for="" style="padding: 1%" id="url">URL: </label>
-        <input type="" name="url" class="url_input" [(ngModel)]="site" />
+        <input type="" name="url" class="url_input" [(ngModel)]="site"  placeholder="Enter Site eg: https://edition.cnn.com" />
       </td>
 
       <pre></pre>
@@ -18,7 +18,7 @@
               type=""
               name="wordone"
               class="word_one"
-              [(ngModel)]="keyWordOne"
+              [(ngModel)]="keyWordOne" placeholder="Enter key word"
             />
           </td>
 
@@ -30,7 +30,7 @@
               type=""
               name="wordtwo"
               class="word_two"
-              [(ngModel)]="keyWordTwo"
+              [(ngModel)]="keyWordTwo" placeholder="Enter key word"
             />
           </td>
 
@@ -42,7 +42,7 @@
               type=""
               name="wordthree"
               [(ngModel)]="keyWordThree"
-              class="word_three"
+              class="word_three" placeholder="Enter key word"
             />
           </td>
         </tr>
